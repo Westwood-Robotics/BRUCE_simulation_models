@@ -1,0 +1,47 @@
+<!--
+__author__    = "Westwood Robotics Corporation"
+__email__     = "info@westwoodrobotics.io"
+__copyright__ = "Copyright 2024 Westwood Robotics Corporation"
+__date__      = "February 29, 2024"
+__project__   = "BRUCE"
+__version__   = "0.0.5"
+__status__    = "Product"
+-->
+
+<sdf version="1.6">
+    <world name="default">
+        <physics type="ode">
+          <gravity>0 0 -9.81</gravity>
+          <ode>
+            <solver>
+              <type>quick</type>
+              <dt>0.001</dt>
+              <iters>40</iters>
+              <sor>1.0</sor>
+            </solver>
+            <constraints>
+              <cfm>0.0</cfm>
+              <erp>0.2</erp>
+              <contact_max_correcting_vel>100.0</contact_max_correcting_vel>
+              <contact_surface_layer>0.0</contact_surface_layer>
+            </constraints>
+          </ode>
+        </physics>
+            <include>
+                <uri>model://ground_plane</uri>
+            </include>
+            <include>
+                <uri>model://sun</uri>
+            </include>
+            <include>
+                <uri>model://bruce</uri>
+                <plugin name="gazebo_model_plugin" filename="bruce_gazebo_model_interface.so">
+                    <robot_name>bruce</robot_name>
+                </plugin>
+                <pose>0 0 0.43 0 0 0</pose>
+            </include>
+        <plugin name="gazebo_world_plugin" filename="bruce_gazebo_world_interface.so">
+            <world_name>world</world_name>
+        </plugin>
+    </world>
+</sdf>
