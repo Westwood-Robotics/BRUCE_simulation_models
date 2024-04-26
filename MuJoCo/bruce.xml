@@ -30,11 +30,11 @@
       <body name="hip_yaw_link_r" pos="0.029216 -0.0758557 -0.039765" quat="0.707107 0 0 -0.707107">
         <inertial pos="2.71e-06 -0.00024824 0.00522427" quat="0.517691 0.482114 0.518083 0.480784" mass="0.637563" diaginertia="0.0016174 0.00152078 0.000485406"/>
         <joint name="hip_yaw_r" pos="0 0 0" axis="0 0 1" limited="true" range="-3.1415 3.1415"/>
-        <geom type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="hip_yaw_link_r"/>
+        <geom type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="hip_yaw_link_r" contype="0" conaffinity="0"/>
         <body name="hip_roll_link_r" quat="0.5 -0.5 0.5 0.5">
           <inertial pos="-1.51e-07 0 6.88e-06" mass="0.05" diaginertia="1e-05 1e-05 1e-05"/>
           <joint name="hip_roll_r" pos="0 0 0" axis="0 0 1" limited="true" range="-3.1415 3.1415"/>
-          <geom type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="hip_roll_link_r"/>
+          <geom type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="hip_roll_link_r" contype="0" conaffinity="0"/>
           <body name="hip_pitch_link_r" quat="0.707107 0.707107 0 0">
             <inertial pos="0.140714 -0.0086817 0.00167429" quat="-0.0210718 0.710934 0.00543456 0.702922" mass="0.72849" diaginertia="0.0181996 0.0179488 0.000479326"/>
             <joint name="hip_pitch_r" pos="0 0 0" axis="0 0 1" limited="true" range="-3.1415 3.1415"/>
@@ -56,11 +56,11 @@
       <body name="hip_yaw_link_l" pos="0.029216 0.0758557 -0.039765" quat="0.707107 0 0 -0.707107">
         <inertial pos="0 -0.00020849 0.00528032" quat="0.518836 0.480432 0.518756 0.480506" mass="0.637386" diaginertia="0.00161868 0.00152047 0.0004852"/>
         <joint name="hip_yaw_l" pos="0 0 0" axis="0 0 1" limited="true" range="-3.1415 3.1415"/>
-        <geom type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="hip_yaw_link_l"/>
+        <geom type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="hip_yaw_link_l" contype="0" conaffinity="0"/>
         <body name="hip_roll_link_l" quat="0.500001 -0.499999 0.500001 0.499999">
           <inertial pos="-1.51e-07 0 6.88e-06" mass="0.05" diaginertia="1e-05 1e-05 1e-05"/>
           <joint name="hip_roll_l" pos="0 0 0" axis="0 0 1" limited="true" range="-3.1415 3.1415"/>
-          <geom type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="hip_roll_link_l"/>
+          <geom type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="hip_roll_link_l" contype="0" conaffinity="0"/>
           <body name="hip_pitch_link_l" quat="0.707107 0.707107 0 0">
             <inertial pos="0.142447 -0.00832054 0.00049317" quat="-0.002203 0.702817 0.024599 0.710942" mass="0.720628" diaginertia="0.018195 0.0179541 0.000461885"/>
             <joint name="hip_pitch_l" pos="0 0 0" axis="0 0 1" limited="true" range="-3.1415 3.1415"/>
