@@ -2,9 +2,9 @@
 __author__    = "Westwood Robotics Corporation"
 __email__     = "info@westwoodrobotics.io"
 __copyright__ = "Copyright 2024 Westwood Robotics Corporation"
-__date__      = "February 29, 2024"
+__date__      = "May 22, 2024"
 __project__   = "BRUCE"
-__version__   = "0.0.5"
+__version__   = "0.0.6"
 __status__    = "Product"
 -->
 
@@ -109,7 +109,7 @@ __status__    = "Product"
       velocity="1000" />
   </joint>
   <link
-    name="hip_roll_link_r">
+    name="hip_pitch_link_r">
     <inertial>
       <origin
         xyz="-1.51E-07 0 6.88E-06"
@@ -149,7 +149,7 @@ __status__    = "Product"
     </collision>
   </link>
   <joint
-    name="hip_roll_r"
+    name="hip_pitch_r"
     type="revolute">
     <origin
       xyz="0 0 0"
@@ -157,9 +157,9 @@ __status__    = "Product"
     <parent
       link="hip_yaw_link_r" />
     <child
-      link="hip_roll_link_r" />
+      link="hip_pitch_link_r" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 -1 0" />
     <limit
       lower="-3.1415"
       upper="3.1415"
@@ -167,7 +167,7 @@ __status__    = "Product"
       velocity="1000" />
   </joint>
   <link
-    name="hip_pitch_link_r">
+    name="hip_roll_link_r">
     <inertial>
       <origin
         xyz="0.14071429 -0.0086817 0.00167429"
@@ -207,17 +207,17 @@ __status__    = "Product"
     </collision>
   </link>
   <joint
-    name="hip_pitch_r"
+    name="hip_roll_r"
     type="revolute">
     <origin
       xyz="0 0 0"
       rpy="1.570796327 0 0" />
     <parent
-      link="hip_roll_link_r" />
-    <child
       link="hip_pitch_link_r" />
+    <child
+      link="hip_roll_link_r" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 -1 0" />
     <limit
       lower="-3.1415"
       upper="3.1415"
@@ -271,7 +271,7 @@ __status__    = "Product"
       xyz="0.204949408 0 0"
       rpy="0 0 0" />
     <parent
-      link="hip_pitch_link_r" />
+      link="hip_roll_link_r" />
     <child
       link="knee_pitch_link_r" />
     <axis
@@ -399,7 +399,7 @@ __status__    = "Product"
       velocity="1000" />
   </joint>
   <link
-    name="hip_roll_link_l">
+    name="hip_pitch_link_l">
     <inertial>
       <origin
         xyz="-1.51E-07 0 6.88E-06"
@@ -439,7 +439,7 @@ __status__    = "Product"
     </collision>
   </link>
   <joint
-    name="hip_roll_l"
+    name="hip_pitch_l"
     type="revolute">
     <origin
       xyz="0 0 0"
@@ -447,9 +447,9 @@ __status__    = "Product"
     <parent
       link="hip_yaw_link_l" />
     <child
-      link="hip_roll_link_l" />
+      link="hip_pitch_link_l" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 -1 0" />
     <limit
       lower="-3.1415"
       upper="3.1415"
@@ -457,7 +457,7 @@ __status__    = "Product"
       velocity="1000" />
   </joint>
   <link
-    name="hip_pitch_link_l">
+    name="hip_roll_link_l">
     <inertial>
       <origin
         xyz="0.1424467 -0.00832054 0.00049317"
@@ -497,17 +497,17 @@ __status__    = "Product"
     </collision>
   </link>
   <joint
-    name="hip_pitch_l"
+    name="hip_roll_l"
     type="revolute">
     <origin
       xyz="0 0 0"
       rpy="1.570796327 0 0" />
     <parent
-      link="hip_roll_link_l" />
-    <child
       link="hip_pitch_link_l" />
+    <child
+      link="hip_roll_link_l" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 -1 0" />
     <limit
       lower="-3.1415"
       upper="3.1415"
@@ -561,7 +561,7 @@ __status__    = "Product"
       xyz="0.204949408 0 0"
       rpy="0 0 0" />
     <parent
-      link="hip_pitch_link_l" />
+      link="hip_roll_link_l" />
     <child
       link="knee_pitch_link_l" />
     <axis
