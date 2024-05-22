@@ -96,64 +96,12 @@ __status__    = "Product"
         </geometry>
       </visual>
     </link>
-    <joint name='hip_roll_r' type='revolute'>
+    <joint name='hip_pitch_r' type='revolute'>
       <pose relative_to='hip_yaw_link_r'>0 0 0 -1.5708 1.5708 0</pose>
       <parent>hip_yaw_link_r</parent>
-      <child>hip_roll_link_r</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-3.1415</lower>
-          <upper>3.1415</upper>
-          <effort>1000</effort>
-          <velocity>1000</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.002</damping>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='hip_roll_link_r'>
-      <pose relative_to='hip_roll_r'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>-0 0 7e-06 0 -0 0</pose>
-        <mass>0.05</mass>
-        <inertia>
-          <ixx>1e-05</ixx>
-          <ixy>1e-20</ixy>
-          <ixz>-1e-20</ixz>
-          <iyy>1e-05</iyy>
-          <iyz>1e-20</iyz>
-          <izz>1e-05</izz>
-        </inertia>
-      </inertial>
-      <collision name='hip_roll_link_r_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://bruce/meshes/hip_roll_link_r.STL</uri>
-          </mesh>
-        </geometry>
-      </collision>
-      <visual name='hip_roll_link_r_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://bruce/meshes/hip_roll_link_r.STL</uri>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-    <joint name='hip_pitch_r' type='revolute'>
-      <pose relative_to='hip_roll_link_r'>0 0 0 1.5708 -0 0</pose>
-      <parent>hip_roll_link_r</parent>
       <child>hip_pitch_link_r</child>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0 -1 0</xyz>
         <limit>
           <lower>-3.1415</lower>
           <upper>3.1415</upper>
@@ -170,6 +118,58 @@ __status__    = "Product"
     <link name='hip_pitch_link_r'>
       <pose relative_to='hip_pitch_r'>0 0 0 0 -0 0</pose>
       <inertial>
+        <pose>-0 0 7e-06 0 -0 0</pose>
+        <mass>0.05</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>1e-20</ixy>
+          <ixz>-1e-20</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>1e-20</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='hip_pitch_link_r_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bruce/meshes/hip_roll_link_r.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hip_pitch_link_r_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bruce/meshes/hip_roll_link_r.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hip_roll_r' type='revolute'>
+      <pose relative_to='hip_pitch_link_r'>0 0 0 1.5708 -0 0</pose>
+      <parent>hip_pitch_link_r</parent>
+      <child>hip_roll_link_r</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.1415</lower>
+          <upper>3.1415</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.002</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hip_roll_link_r'>
+      <pose relative_to='hip_roll_r'>0 0 0 0 -0 0</pose>
+      <inertial>
         <pose>0.140714 -0.008682 0.001674 0 -0 0</pose>
         <mass>0.72849</mass>
         <inertia>
@@ -181,7 +181,7 @@ __status__    = "Product"
           <izz>0.0181973</izz>
         </inertia>
       </inertial>
-      <collision name='hip_pitch_link_r_collision'>
+      <collision name='hip_roll_link_r_collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -190,7 +190,7 @@ __status__    = "Product"
           </mesh>
         </geometry>
       </collision>
-      <visual name='hip_pitch_link_r_visual'>
+      <visual name='hip_roll_link_r_visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -201,8 +201,8 @@ __status__    = "Product"
       </visual>
     </link>
     <joint name='knee_pitch_r' type='revolute'>
-      <pose relative_to='hip_pitch_link_r'>0.204949 0 0 0 -0 0</pose>
-      <parent>hip_pitch_link_r</parent>
+      <pose relative_to='hip_roll_link_r'>0.204949 0 0 0 -0 0</pose>
+      <parent>hip_roll_link_r</parent>
       <child>knee_pitch_link_r</child>
       <axis>
         <xyz>0 0 1</xyz>
@@ -415,64 +415,12 @@ __status__    = "Product"
         </geometry>
       </visual>
     </link>
-    <joint name='hip_roll_l' type='revolute'>
+    <joint name='hip_pitch_l' type='revolute'>
       <pose relative_to='hip_yaw_link_l'>0 0 0 -1.57079 1.5708 0</pose>
       <parent>hip_yaw_link_l</parent>
-      <child>hip_roll_link_l</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>-3.1415</lower>
-          <upper>3.1415</upper>
-          <effort>1000</effort>
-          <velocity>1000</velocity>
-        </limit>
-        <dynamics>
-          <damping>0.002</damping>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-      </axis>
-    </joint>
-    <link name='hip_roll_link_l'>
-      <pose relative_to='hip_roll_l'>0 0 0 0 -0 0</pose>
-      <inertial>
-        <pose>-0 0 7e-06 0 -0 0</pose>
-        <mass>0.05</mass>
-        <inertia>
-          <ixx>1e-05</ixx>
-          <ixy>1e-20</ixy>
-          <ixz>-1e-20</ixz>
-          <iyy>1e-05</iyy>
-          <iyz>1e-20</iyz>
-          <izz>1e-05</izz>
-        </inertia>
-      </inertial>
-      <collision name='hip_roll_link_l_collision'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://bruce/meshes/hip_roll_link_l.STL</uri>
-          </mesh>
-        </geometry>
-      </collision>
-      <visual name='hip_roll_link_l_visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://bruce/meshes/hip_roll_link_l.STL</uri>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-    <joint name='hip_pitch_l' type='revolute'>
-      <pose relative_to='hip_roll_link_l'>0 0 0 1.5708 -0 0</pose>
-      <parent>hip_roll_link_l</parent>
       <child>hip_pitch_link_l</child>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0 -1 0</xyz>
         <limit>
           <lower>-3.1415</lower>
           <upper>3.1415</upper>
@@ -489,6 +437,58 @@ __status__    = "Product"
     <link name='hip_pitch_link_l'>
       <pose relative_to='hip_pitch_l'>0 0 0 0 -0 0</pose>
       <inertial>
+        <pose>-0 0 7e-06 0 -0 0</pose>
+        <mass>0.05</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>1e-20</ixy>
+          <ixz>-1e-20</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>1e-20</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='hip_pitch_link_l_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bruce/meshes/hip_roll_link_l.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hip_pitch_link_l_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bruce/meshes/hip_roll_link_l.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hip_roll_l' type='revolute'>
+      <pose relative_to='hip_pitch_link_l'>0 0 0 1.5708 -0 0</pose>
+      <parent>hip_pitch_link_l</parent>
+      <child>hip_roll_link_l</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.1415</lower>
+          <upper>3.1415</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.002</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hip_roll_link_l'>
+      <pose relative_to='hip_roll_l'>0 0 0 0 -0 0</pose>
+      <inertial>
         <pose>0.142447 -0.008321 0.000493 0 -0 0</pose>
         <mass>0.720628</mass>
         <inertia>
@@ -500,7 +500,7 @@ __status__    = "Product"
           <izz>0.0181927</izz>
         </inertia>
       </inertial>
-      <collision name='hip_pitch_link_l_collision'>
+      <collision name='hip_roll_link_l_collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -509,7 +509,7 @@ __status__    = "Product"
           </mesh>
         </geometry>
       </collision>
-      <visual name='hip_pitch_link_l_visual'>
+      <visual name='hip_roll_link_l_visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -520,8 +520,8 @@ __status__    = "Product"
       </visual>
     </link>
     <joint name='knee_pitch_l' type='revolute'>
-      <pose relative_to='hip_pitch_link_l'>0.204949 0 0 0 -0 0</pose>
-      <parent>hip_pitch_link_l</parent>
+      <pose relative_to='hip_roll_link_l'>0.204949 0 0 0 -0 0</pose>
+      <parent>hip_roll_link_l</parent>
       <child>knee_pitch_link_l</child>
       <axis>
         <xyz>0 0 1</xyz>
